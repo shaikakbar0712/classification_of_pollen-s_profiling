@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pollen Grain Classification</title>
+  <link rel="stylesheet" href="/static/uploads/style.css" />
+</head>
+<body>
+
+  <header class="header">
+    <h1>Pollen Grain Classification</h1>
+    <nav>
+      <a href="#" onclick="showSlide('predict')">Prediction</a>
+      <a href="#" onclick="showSlide('about')">About</a>
+      <a href="#" onclick="showSlide('contact')">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Pollen Grain Prediction</h2>
+      <p>
+        We assist researchers and scientists in the field of botany and plant sciences by providing an interface
+        to upload pollen grain images and predict their types using AI.
+      </p>
+    </div>
+  </section>
+
+  <div class="slides-container">
+    <!-- Prediction Slide -->
+    <section id="predict" class="slide">
+      <form method="post" enctype="multipart/form-data">
+        <input type="file" name="image" required />
+        <button type="submit">Classify</button>
+      </form>
+
+      {% if label %}
+        <h2>Prediction Result</h2>
+        <p><strong>Label:</strong> {{ label }}</p>
+        <p><strong>Confidence:</strong> {{ confidence }}%</p>
+        <img src="{{ image_path }}" width="300" />
+        <div class="prediction-info">
+          <h3>Prediction Info</h3>
+          <p>
+            This prediction is based on a convolutional neural network trained on thousands of pollen grain samples. The confidence value indicates how certain the model is about the classification. Please consider using multiple samples for research-grade validation.
+          </p>
+        </div>
+      {% endif %}
+    </section>
+
+    <!-- About Slide -->
+    <section id="about" class="slide">
+      <h2>ABOUT US</h2>
+      <p>
+        PollenNet is developed to support environmental and biological research through intelligent image-based classification.
+      </p>
+    </section>
+
+    <!-- Contact Slide -->
+    <section id="contact" class="slide">
+      <h2>CONTACT</h2>
+      <p>If you have any questions or feedback, feel free to reach out!</p>
+      <p><strong>Email:</strong> akbarshaik0130@gmail.com</p>
+      <p><strong>Phone:</strong> +91 80194 94525</p>
+      <p><strong>Address:</strong> Dept. of Information Technology, SRGEC, Andhra Pradesh, India</p>
+    </section>
+  </div>
+
+  <script src="/static/uploads/script.js" defer></script>
+  <script>
+    function showSlide(id) {
+      document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      showSlide("predict");
+
+      const form = document.querySelector("form");
+      form?.addEventListener("submit", () => {
+        const button = form.querySelector("button");
+        button.innerText = "Classifying...";
+        button.disabled = true;
+      });
+    });
+  </script>
+
+</body>
+</html>

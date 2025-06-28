@@ -1,0 +1,177 @@
+/* Base styling */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #e4f0e2, #bfe3d6);
+  color: #333;
+  text-align: center;
+  padding: 40px;
+  margin: 0;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #c7439b;
+}
+
+form {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+}
+
+input[type="file"] {
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 1em;
+}
+
+button {
+  background-color: #b46ba5;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #3b7f5a;
+}
+
+h2 {
+  margin-top: 30px;
+  font-size: 1.5em;
+  color: #bd0ea0;
+}
+
+img {
+  margin-top: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  height: auto;
+}
+
+/* Added layout styling */
+
+.header {
+  background-color: #89bad3;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.header nav {
+  margin-top: 10px;
+}
+
+.header nav a {
+  color: #ffe0e0;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.header nav a:hover {
+  text-decoration: underline;
+}
+
+.hero {
+  background-image: url('/static/uploads/banner1.jpg'); /* Replace with your image filename */
+  background-size: cover;
+  background-position: center;
+  padding: 60px 20px;
+  color: white;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.hero-text h2 {
+  font-size: 2.2em;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 1.2em;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#about {
+  padding: 40px 20px;
+  background: #ffffffd0;
+  margin-top: 60px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+.prediction-info {
+  margin-top: 20px;
+  padding: 15px 20px;
+  background-color: #f0fdf7;
+  border-left: 4px solid #2a6041;
+  border-radius: 8px;
+  display: inline-block;
+  text-align: left;
+  max-width: 600px;
+}
+#contact {
+  background-color: #fefefe;
+  padding: 40px 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  margin-top: 60px;
+}
+
+#contact p {
+  font-size: 1.1em;
+  margin: 8px 0;
+}
+
+#contact strong {
+  color: #2a6041;
+}
+html {
+  scroll-behavior: smooth;
+}
+.slides-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.slide {
+  display: none;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.slide.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Prevent layout shift when switching slides */
+.slides-container {
+  min-height: 500px; /* or whatever height keeps the layout steady */
+}
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  text-align: center;
+  background: url('/static/uploads/banner1.png') no-repeat center center fixed;
+  background-size: cover;
+}
